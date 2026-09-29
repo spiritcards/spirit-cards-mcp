@@ -1,0 +1,34 @@
+{
+  "name": "spirit-cards-mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server (read-only, stdio) for Spirit Cards (Proof of Card) — the proof-of-work minted collectible card game on Robinhood Chain.",
+  "type": "module",
+  "bin": {
+    "spirit-cards-mcp": "src/index.mjs"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "spirit-cards",
+    "proof-of-card",
+    "proof-of-work",
+    "robinhood-chain",
+    "nft",
+    "viem"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2",
+    "viem": "^2",
+    "zod": "^4"
+  }
+}
