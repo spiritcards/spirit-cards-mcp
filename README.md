@@ -80,6 +80,7 @@ All data endpoints are read-only GETs:
 - `/stats/current.json` — live supply, price, required difficulty (`baseBits`), cooldown
 - `/api/meta/{tokenId}` — card metadata
 - `/api/points` — points leaderboard
+- `/api/pool` — staking pool / emissions snapshot (accrued pool, split shares, vault weight)
 - `/api/recent` — recent on-chain activity
 
 ---
@@ -92,6 +93,7 @@ All data endpoints are read-only GETs:
 | `get_collection_stats`| —                               | Live stats: supply, price, `baseBits`, cooldown, paused flag            |
 | `get_card`            | `tokenId`                       | Card metadata (`/api/meta/{tokenId}`)                                   |
 | `get_leaderboard`     | `limit?` (default 25)           | Points leaderboard, trimmed to `limit`                                  |
+| `get_pool`            | —                               | Staking pool: accrued pool, split shares, vault weight (undistributed)  |
 | `get_recent_activity` | `limit?` (default 10)           | Recent events, trimmed to `limit`                                       |
 | `verify_nonce`        | `miner`, `nonce`                | Verify a nonce's work locally (no tx): `{work, leadingZeroBits, valid}` |
 | `find_nonce`          | `miner`, `maxAttempts?` (≤5M)   | Grind nonce 0.. until valid (~20 s wall cap)                            |

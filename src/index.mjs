@@ -231,7 +231,20 @@ server.registerTool(
   },
 );
 
-// 6. verify_nonce -----------------------------------------------------------
+// 6. get_pool ---------------------------------------------------------------
+server.registerTool(
+  "get_pool",
+  {
+    title: "Get staking pool",
+    description:
+      "Fetch the live staking-pool / emissions snapshot (/api/pool): accrued pool and house revenue, " +
+      "the fee split shares, and the vault's total weight and undistributed rewards.",
+    inputSchema: z.object({}),
+  },
+  async () => text(await getJson("/api/pool")),
+);
+
+// 7. verify_nonce -----------------------------------------------------------
 server.registerTool(
   "verify_nonce",
   {
@@ -260,7 +273,7 @@ server.registerTool(
   },
 );
 
-// 7. find_nonce -------------------------------------------------------------
+// 8. find_nonce -------------------------------------------------------------
 const FIND_NONCE_WALL_CAP_MS = 20_000;
 const FIND_NONCE_MAX_ATTEMPTS_CAP = 5_000_000;
 
@@ -316,7 +329,7 @@ server.registerTool(
   },
 );
 
-// 8. get_mining_guide -------------------------------------------------------
+// 9. get_mining_guide -------------------------------------------------------
 server.registerTool(
   "get_mining_guide",
   {
@@ -372,7 +385,7 @@ server.registerTool(
 // Prompts
 // ---------------------------------------------------------------------------
 
-// 9. project_overview -------------------------------------------------------
+// 10. project_overview ------------------------------------------------------
 server.registerPrompt(
   "project_overview",
   {
@@ -397,7 +410,7 @@ server.registerPrompt(
   }),
 );
 
-// 10. start_mining ----------------------------------------------------------
+// 11. start_mining ----------------------------------------------------------
 server.registerPrompt(
   "start_mining",
   {
