@@ -2,7 +2,7 @@
 
 A **read-only** [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for
 **Spirit Cards (Proof of Card)** — a proof-of-work minted collectible card game on
-**Robinhood Chain** (chainId `46630`).
+**Robinhood Chain** — mainnet `chainId 4663`, live since 2026-10-05.
 
 It runs over **stdio**, so [Claude Desktop](https://claude.ai/download) and Cursor can launch it
 with `npx`. It fetches live game data from the hosted web API and computes the proof-of-work
@@ -44,7 +44,7 @@ Add this to `claude_desktop_config.json`
     "spirit-cards": {
       "command": "npx",
       "args": ["-y", "spirit-cards-mcp"],
-      "env": { "SPIRIT_CARDS_API": "https://quiet-atlas-2049.vercel.app" }
+      "env": { "SPIRIT_CARDS_API": "https://spiritcards.fun" }
     }
   }
 }
@@ -60,7 +60,7 @@ Add this to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global):
     "spirit-cards": {
       "command": "npx",
       "args": ["-y", "spirit-cards-mcp"],
-      "env": { "SPIRIT_CARDS_API": "https://quiet-atlas-2049.vercel.app" }
+      "env": { "SPIRIT_CARDS_API": "https://spiritcards.fun" }
     }
   }
 }
@@ -72,7 +72,7 @@ Add this to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global):
 
 | Env var             | Default                              | Meaning                         |
 | ------------------- | ------------------------------------ | ------------------------------- |
-| `SPIRIT_CARDS_API`  | `https://quiet-atlas-2049.vercel.app` | Base URL of the hosted site/API |
+| `SPIRIT_CARDS_API`  | `https://spiritcards.fun` | Base URL of the hosted site/API |
 
 All data endpoints are read-only GETs:
 
@@ -126,7 +126,7 @@ Both `verify_nonce` and `find_nonce` compute this locally with viem's `keccak256
 Prefer HTTP over stdio? The same server is also hosted at:
 
 ```
-https://quiet-atlas-2049.vercel.app/api/mcp
+https://spiritcards.fun/api/mcp
 ```
 
 ---

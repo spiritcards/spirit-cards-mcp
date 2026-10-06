@@ -18,12 +18,12 @@ import { z } from "zod";
 // Config
 // ---------------------------------------------------------------------------
 
-const DEFAULT_API = "https://quiet-atlas-2049.vercel.app";
+const DEFAULT_API = "https://spiritcards.fun";
 
 /** Base URL of the hosted Spirit Cards site (no trailing slash). */
 const API = (process.env.SPIRIT_CARDS_API || DEFAULT_API).replace(/\/+$/, "");
 
-const DEFAULT_SITE = "https://proofofcard.fun";
+const DEFAULT_SITE = "https://spiritcards.fun";
 const MINER_REPO = "github.com/spiritcards/spirit-cards";
 
 // ---------------------------------------------------------------------------
